@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Segoe UI', 'Plus Jakarta Sans', 'Lucida Grande', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* 2008 Frutiger Nocto — Rainy Midnight Teal, Aqua, Emerald & Streetlight Amber */
+  --color-nocto-bg: #06141b;
+  --color-nocto-deep: #040e13;
+  --color-nocto-panel: #0a222d;
+  --color-nocto-aqua: #38d9e8;
+  --color-nocto-emerald: #2dd4a0;
+  --color-nocto-amber: #f5a623;
+
+  /* High-Readability Cool Mist Typography */
+  --color-nocto-heading: #f2fbfd;
+  --color-nocto-body: #d7eef2;
+  --color-nocto-muted: #97c2cc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #06141b;
+    color: #d7eef2;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(45, 212, 160, 0.16) 0%, transparent 42%),
+      radial-gradient(circle at 82% 18%, rgba(56, 217, 232, 0.2) 0%, transparent 46%),
+      radial-gradient(circle at 72% 78%, rgba(245, 166, 35, 0.11) 0%, transparent 40%),
+      linear-gradient(180deg, #081c26 0%, #06141b 48%, #040f15 100%);
+    background-attachment: fixed;
+    color: #d7eef2;
+    line-height: 1.68;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(56, 217, 232, 0.35);
+    color: #ffffff;
+  }
+}
+
+/* ==========================================================================
+   Font Illumination System (Controlled by the Navbar "Lights" Button)
+   ========================================================================== */
+.aero-text-shadow,
+.aero-label-shadow,
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+a,
+button,
+span,
+li,
+label {
+  transition:
+    text-shadow 300ms ease,
+    color 300ms ease,
+    filter 300ms ease;
+}
+
+.font-calm .aero-text-shadow,
+.font-calm .aero-label-shadow {
+  text-shadow: none;
+}
+
+/* Illuminated Font Mode: Soft luminous nocturnal glow on typography */
+.font-illuminated h1,
+.font-illuminated h2,
+.font-illuminated .aero-text-shadow {
+  color: #f8feff;
+  text-shadow:
+    0 0 12px rgba(103, 243, 255, 0.55),
+    0 0 28px rgba(45, 212, 160, 0.28),
+    0 1px 3px rgba(0, 0, 0, 0.65);
+}
+
+.font-illuminated h3,
+.font-illuminated .aero-label-shadow {
+  color: #f4fdff;
+  text-shadow:
+    0 0 10px rgba(103, 243, 255, 0.42),
+    0 0 20px rgba(56, 217, 232, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.font-illuminated p,
+.font-illuminated li,
+.font-illuminated blockquote,
+.font-illuminated label {
+  color: #e6f7fa;
+  text-shadow: 0 0 9px rgba(135, 234, 248, 0.22);
+}
+
+.font-illuminated nav a,
+.font-illuminated button {
+  text-shadow: 0 0 10px rgba(125, 242, 255, 0.36);
+}
+
+/* ==========================================================================
+   Clean Translucent Bars, Boxes & Buttons (Soft Sheer Transparency, No Harsh Glare)
+   ========================================================================== */
+.aero-dock-bar {
+  background: rgba(7, 26, 35, 0.56);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 1px solid rgba(125, 222, 235, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
+}
+
+/* Translucent Bar & Secondary Action Pill Buttons */
+.aero-nav-btn {
+  position: relative;
+  background: rgba(12, 42, 55, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(125, 222, 235, 0.18);
+  transition: all 180ms ease;
+}
+
+.aero-nav-btn:hover {
+  background: rgba(20, 68, 86, 0.52);
+  border-color: rgba(125, 222, 235, 0.34);
+}
+
+.aero-nav-btn-active {
+  background: rgba(28, 106, 126, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(103, 243, 255, 0.42);
+}
+
+/* Soft Translucent Containers & Cards */
+.aero-window {
+  position: relative;
+  overflow: hidden;
+  background: rgba(7, 25, 34, 0.54);
+  backdrop-filter: blur(16px) saturate(125%);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  border: 1px solid rgba(125, 222, 235, 0.16);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+}
+
+.aero-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(7, 25, 34, 0.5);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  border: 1px solid rgba(125, 222, 235, 0.16);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.34);
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.aero-card-interactive:hover {
+  transform: translateY(-2px);
+  background: rgba(10, 33, 45, 0.58);
+  border-color: rgba(125, 222, 235, 0.32);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.44);
+}
+
+/* Subtle Translucent Header Bar (No White Glare Split) */
+.aero-titlebar {
+  background: rgba(12, 42, 55, 0.36);
+  border-bottom: 1px solid rgba(125, 222, 235, 0.14);
+}
+
+/* Transparent Inner Reading Tray & Input Fields */
+.aero-well {
+  background: rgba(4, 16, 23, 0.5);
+  border: 1px solid rgba(125, 222, 235, 0.15);
+}
+
+/* ==========================================================================
+   Translucent Buttons, Chips & Media Controls
+   ========================================================================== */
+.aero-gel-primary {
+  position: relative;
+  background: rgba(34, 165, 184, 0.34);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #f2fbfd;
+  font-weight: 600;
+  border: 1px solid rgba(103, 243, 255, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+  transition: all 180ms ease;
+}
+
+.aero-gel-primary:hover {
+  background: rgba(45, 192, 206, 0.46);
+  border-color: rgba(145, 248, 255, 0.65);
+  transform: translateY(-1px);
+}
+
+.aero-gel-secondary {
+  background: rgba(12, 42, 55, 0.44);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #f2fbfd;
+  border: 1px solid rgba(125, 222, 235, 0.22);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  transition: all 180ms ease;
+}
+
+.aero-gel-secondary:hover {
+  background: rgba(20, 66, 84, 0.54);
+  border-color: rgba(125, 222, 235, 0.4);
+}
+
+.aero-tag {
+  background: rgba(14, 50, 64, 0.42);
+  border: 1px solid rgba(125, 222, 235, 0.2);
+}
+
+/* Soft Translucent Round Control Button (No Gloss Dome Glare) */
+.aero-sphere-play {
+  position: relative;
+  background: rgba(36, 168, 186, 0.36);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(103, 243, 255, 0.45);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.aero-sphere-play:hover {
+  transform: scale(1.04);
+  background: rgba(45, 194, 210, 0.48);
+}
+
+.aero-sphere-play:active {
+  transform: scale(0.97);
+}

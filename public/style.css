@@ -1,0 +1,5 @@
+body { margin: 0; background: #06141b; color: #d7eef2; font: 16px/1.6 system-ui, sans-serif; }
+main { max-width: 48rem; margin: 0 auto; padding: 1.5rem 1rem; }
+h1, h3 { color: #f2fbfd; }
+details { border: 1px solid #1f4a57; border-radius: .75rem; padding: .75rem 1rem; margin: .75rem 0; }
+summary { cursor: pointer; font-weight: 600; }
