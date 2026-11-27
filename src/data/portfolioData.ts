@@ -7,23 +7,29 @@ export const PROFILE = {
   email: 'leonardo.juscamaytat@gmail.com',
   github: 'https://github.com/MayYTa',
   linkedin: 'https://www.linkedin.com/in/leonardo-juscamayta-trujillo-108b30283/',
-  // Put your CV (no phone or address) in public/ and write '/cv.pdf' here.
-  cvUrl: '',
+  // Put your CVs in public/ and set their paths per language here.
+  cvUrl: {
+    en: '/Leonardo_Mathias_Juscamayta_Trujillo_CV_Data_Scientist_ML_Engineer_Data_Analyst_EN.pdf',
+    es: '/Leonardo_Mathias_Juscamayta_Trujillo_CV_Data_Scientist_ML_Engineer_Data_Analyst.pdf',
+  } satisfies Text,
 };
 
 export const ABOUT: { role: Text; headline: Text; paragraph: Text; seeking: Text } = {
-  role: { en: 'Computer Science student', es: 'Estudiante de Ciencias de la Computación' },
+  role: {
+    en: 'Computer Science (8th sem.) · ML & Data',
+    es: 'Ciencias de la Computación (8.° ciclo) · ML y Datos',
+  },
   headline: {
-    en: 'Turning data into useful information for better decisions.',
-    es: 'Convertir datos en información útil para decidir mejor.',
+    en: 'Turning data into strategic decisions through Machine Learning and Analytics.',
+    es: 'Transformar datos en decisiones estratégicas mediante Machine Learning y Analítica.',
   },
   paragraph: {
-    en: 'I am a Computer Science student passionate about Machine Learning: seeing how data can become useful information for future decisions, and how it can be used to tackle current problems and automate processes.',
-    es: 'Soy estudiante de Ciencias de la Computación y me apasiona el Machine Learning: ver cómo los datos pueden convertirse en información útil para decisiones futuras, y cómo pueden servir para atacar problemas actuales y automatizar procesos.',
+    en: 'I am an 8th-semester Computer Science student at UPC focused on Machine Learning, Data Analytics, and NLP. I have experience with Exploratory Data Analysis (CRISP-DM), Deep Learning models (GRU, Computer Vision), text extraction and cleaning pipelines, relational databases, and backend tooling in Agile environments (Jira).',
+    es: 'Soy estudiante de 8.° ciclo de Ciencias de la Computación en la UPC, orientado a Machine Learning, Data Analytics y NLP. Tengo experiencia en Análisis Exploratorio de Datos (CRISP-DM), modelos de Deep Learning (GRU, Computer Vision), pipelines de extracción y limpieza de texto, bases de datos relacionales y herramientas de desarrollo en entornos ágiles (Jira).',
   },
   seeking: {
-    en: 'Looking for pre-professional internships in data, AI and ML.',
-    es: 'Busco prácticas preprofesionales en datos, IA y ML.',
+    en: 'Looking for pre-professional internships in ML Engineering, Data Science, Data Analytics, and Software Engineering.',
+    es: 'Busco prácticas preprofesionales en ML Engineering, Data Science, Data Analytics e Ingeniería de Software.',
   },
 };
 
@@ -104,15 +110,74 @@ export const WORKS_DATA: WorkItem[] = [
 
 // Add only skills you can discuss in an interview. The cards appear once this has items.
 export const SKILL_GROUPS: { label: Text; items: string[] }[] = [
-  // { label: { en: 'Machine Learning', es: 'Machine Learning' }, items: ['LightGBM', 'SHAP'] },
+  {
+    label: { en: 'ML, Data & Analytics', es: 'ML, Datos y Analítica' },
+    items: ['PyTorch', 'Scikit-Learn', 'Pandas', 'NumPy', 'OpenCV', 'MediaPipe', 'spaCy', 'NLTK', 'Plotly', 'Seaborn', 'PowerBI'],
+  },
+  {
+    label: { en: 'Languages & Databases', es: 'Lenguajes y Bases de Datos' },
+    items: ['Python', 'SQL', 'PostgreSQL', 'C++', 'JavaScript', 'HTML/CSS', 'GDScript'],
+  },
+  {
+    label: { en: 'Software Engineering & Tools', es: 'Ingeniería de Software y Herramientas' },
+    items: ['Spring Boot', 'Angular', 'Docker', 'Git/GitHub', 'Linux CLI', 'Postman/Bruno', 'Jira'],
+  },
 ];
 
 // Add only real certificates. The section and its menu link appear once this has items.
 export const CERTIFICATIONS: { title: string; issuer: string; date: string; url: string }[] = [
-  // { title: '...', issuer: '...', date: '2026', url: 'https://...' },
+  {
+    title: 'The Structured Query Language (SQL)',
+    issuer: 'University of Colorado Boulder',
+    date: 'Jul 2026 · ID: 7RJDE5TO9HX5',
+    url: '',
+  },
+  {
+    title: 'Relational Database Design',
+    issuer: 'University of Colorado Boulder',
+    date: 'Jul 2026 · ID: JL18PNQHQS6N',
+    url: '',
+  },
+  {
+    title: 'Python Data Structures',
+    issuer: 'University of Michigan',
+    date: 'Oct 2024 · ID: ILXRHJN5EZUJ',
+    url: '',
+  },
+  {
+    title: 'Retrieving, Processing, and Visualizing Data with Python',
+    issuer: 'University of Michigan',
+    date: 'Nov 2024 · ID: UGUCLTYGJUST',
+    url: '',
+  },
+  {
+    title: 'B2 First Certificate in English',
+    issuer: 'Cambridge Assessment English',
+    date: 'Apr 2025 · Score: 179 (Grade B)',
+    url: '',
+  },
 ];
 
 // Only music you have the right to publish. Files go in public/music/.
 export const TRACKS: { title: string; artist: string; src: string }[] = [
-  // { title: 'My first track', artist: 'Artist name', src: '/music/track1.mp3' },
+  {
+    title: '今日はお散歩日和。 - Today is a Good Day for a Walk',
+    artist: 'Noru (のる)',
+    src: '/music/01 - 今日はお散歩日和。 - Today is a Good Day for a Walk - Noru (のる).mp3',
+  },
+  {
+    title: 'おもちゃのダンス - Toy Dance',
+    artist: 'Sumochi (すもち)',
+    src: '/music/02 - おもちゃのダンス - Toy Dance - Sumochi (すもち).mp3',
+  },
+  {
+    title: 'ensolarado - Sunny',
+    artist: 'Kyaai',
+    src: '/music/03 - ensolarado - Sunny - Kyaai.mp3',
+  },
+  {
+    title: 'お料理中 - While Cooking',
+    artist: 'Wataru Yuuki (ゆうきわたる)',
+    src: '/music/04 - お料理中 - While Cooking - Wataru Yuuki (ゆうきわたる).mp3',
+  },
 ];

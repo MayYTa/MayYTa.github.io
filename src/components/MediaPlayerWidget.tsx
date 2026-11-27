@@ -8,7 +8,7 @@ const BUTTON = 'aero-nav-btn flex h-9 w-9 cursor-pointer items-center justify-ce
 export function MediaPlayerWidget({ lang }: { lang: Lang }) {
   const audio = useRef<HTMLAudioElement>(null);
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -17,6 +17,7 @@ export function MediaPlayerWidget({ lang }: { lang: Lang }) {
   // Music starts only when the visitor presses play
   useEffect(() => {
     if (!audio.current) return;
+    audio.current.volume = 0.10;
     if (playing) audio.current.play().catch(() => setPlaying(false));
     else audio.current.pause();
   }, [playing, index]);

@@ -37,8 +37,13 @@ export function AboutSection({ lang }: { lang: Lang }) {
                 <Mail className="h-4 w-4 text-[#38d9e8]" />
                 {es ? 'Contáctame' : 'Contact me'}
               </a>
-              {PROFILE.cvUrl && (
-                <a href={PROFILE.cvUrl} className="aero-gel-secondary inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold">
+              {PROFILE.cvUrl[lang] && (
+                <a
+                  href={PROFILE.cvUrl[lang]}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="aero-gel-secondary inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold"
+                >
                   <FileText className="h-4 w-4 text-[#f5a623]" />
                   CV
                 </a>

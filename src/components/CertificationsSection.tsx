@@ -9,12 +9,25 @@ export function CertificationsSection({ lang }: { lang: Lang }) {
           {lang === 'es' ? 'Certificados' : 'Certifications'}
         </h2>
         <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {CERTIFICATIONS.map((cert) => (
-            <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className="aero-card aero-card-interactive rounded-2xl p-5">
-              <h3 className="text-lg font-bold">{cert.title}</h3>
-              <p className="mt-1 text-sm">{cert.issuer} · {cert.date}</p>
-            </a>
-          ))}
+          {CERTIFICATIONS.map((cert) => {
+            const cardClass = 'aero-card aero-card-interactive rounded-2xl p-5';
+            const content = (
+              <>
+                <h3 className="text-lg font-bold">{cert.title}</h3>
+                <p className="mt-1 text-sm">{cert.issuer} · {cert.date}</p>
+              </>
+            );
+
+            return cert.url ? (
+              <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className={cardClass}>
+                {content}
+              </a>
+            ) : (
+              <div key={cert.title} className={cardClass}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
